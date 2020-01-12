@@ -1,0 +1,23 @@
+version: '3.2'
+
+services:
+  app:
+    image: svelte-container:dev
+    build:
+      context: ./app
+    environment:
+      - TZ=JST-9
+    volumes:
+      - type: bind
+        source: ../
+        target: /home/workspace
+    command: sh -c "yarn start:dev"
+    networks:
+      - svelte-container
+    ports:
+      - "5000:5000"
+
+
+networks:
+  svelte-container:
+    external: false
