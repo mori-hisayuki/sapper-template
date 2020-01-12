@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   app:
-    image: svelte-container:dev
+    image: sapper-container:dev
     build:
       context: ./app
     environment:
@@ -11,13 +11,13 @@ services:
       - type: bind
         source: ../
         target: /home/workspace
-    command: sh -c "yarn start:dev"
+    command: sh -c "yarn dev"
     networks:
-      - svelte-container
+      - sapper-container
     ports:
-      - "5000:5000"
+      - "3000:3000"
 
 
 networks:
-  svelte-container:
+  sapper-container:
     external: false

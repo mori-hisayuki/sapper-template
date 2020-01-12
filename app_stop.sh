@@ -1,6 +1,6 @@
 pushd ./docker
 
 docker-compose down
-docker network remove svelte-template
+docker network remove sapper-template
 
 popd
